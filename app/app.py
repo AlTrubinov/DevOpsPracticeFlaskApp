@@ -19,7 +19,7 @@ def index():
         tables = cursor.fetchall()
         return jsonify({"tables": tables})
     except mysql.connector.Error as err:
-        return jsonify({"error": f"MySQL error: {err}, MYSQL_ROOT_PASSWORD: {os.getenv('MYSQL_ROOT_PASSWORD')}, MYSQL_DB_NAME: {os.getenv('MYSQL_DB_NAME')}"})
+        return jsonify({"error": f"MySQL connector error: {err}"})
     except Exception as e:
         return jsonify({"error": str(e)})
     finally:
