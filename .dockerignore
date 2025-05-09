@@ -5,7 +5,7 @@ __pycache__/
 *.pyd
 
 # Environment
-.env
+.docker/.env
 *.env
 
 # Byte-compiled / cache
@@ -14,7 +14,7 @@ __pycache__/
 
 # Docker
 Dockerfile.*
-docker-compose*.yml
+.docker/docker-compose*.yml
 .dockerignore
 
 # Git

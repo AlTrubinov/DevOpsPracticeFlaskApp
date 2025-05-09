@@ -12,7 +12,7 @@ def index():
             host='db',
             user='root',
             password=os.getenv('MYSQL_ROOT_PASSWORD'),
-            database=os.getenv('MYSQL_DB_NAME')
+            database=os.getenv('MYSQL_DATABASE')
         )
         cursor = connection.cursor()
         cursor.execute("SHOW TABLES;")

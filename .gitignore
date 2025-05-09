@@ -1,5 +1,5 @@
 # Environment
-.env
+.docker/.env
 *.env
 
 # IDE/editor configs
