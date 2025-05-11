@@ -4,15 +4,16 @@ import os
 
 app = Flask(__name__)
 
-@app.route('/')
+
+@app.route("/")
 def index():
     connection = None
     try:
         connection = mysql.connector.connect(
-            host='db',
-            user='root',
-            password=os.getenv('MYSQL_ROOT_PASSWORD'),
-            database=os.getenv('MYSQL_DATABASE')
+            host="db",
+            user="root",
+            password=os.getenv("MYSQL_ROOT_PASSWORD"),
+            database=os.getenv("MYSQL_DATABASE"),
         )
         cursor = connection.cursor()
         cursor.execute("SHOW TABLES;")
@@ -26,9 +27,13 @@ def index():
         if connection:
             connection.close()
 
-@app.route('/ping')
+
+@app.route("/ping")
 def ping():
     return jsonify({"message": "ping"})
 
+
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000, debug=os.environ.get("FLASK_ENV") == "development")
+    app.run(
+        host="0.0.0.0", port=5000, debug=os.environ.get("FLASK_ENV") == "development"
+    )

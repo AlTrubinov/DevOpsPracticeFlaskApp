@@ -1,0 +1,5 @@
+#!/bin/bash
+
+source .docker/.env
+
+docker-compose -f $COMPOSE_FILE attach $1
