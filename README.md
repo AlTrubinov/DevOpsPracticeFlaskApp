@@ -1,9 +1,9 @@
-**For first run**
-pip install pre-commit
+**For first run** \
+pip install pre-commit \
 pre-commit install
 
-**Start containers**
+**Start containers** \
 .docker/bin/start
 
-**Stop containers**
+**Stop containers** \
 .docker/bin/stop
