@@ -3,3 +3,6 @@ lint:
 
 format:
 	black ../app
+
+format-check:
+	black --check ../app
