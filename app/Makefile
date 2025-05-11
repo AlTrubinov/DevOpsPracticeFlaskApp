@@ -6,3 +6,6 @@ format:
 
 format-check:
 	black --check ../app
+
+test:
+	pytest --maxfail=1 --quiet --disable-warnings

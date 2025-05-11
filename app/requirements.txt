@@ -4,3 +4,4 @@ mysql-connector-python
 # Dev tools
 flake8
 black
+pytest
