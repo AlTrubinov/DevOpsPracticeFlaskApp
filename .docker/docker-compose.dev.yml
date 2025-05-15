@@ -1,5 +1,6 @@
 services:
   web:
+    container_name: web
     env_file:
       - .env
     build:
@@ -15,6 +16,7 @@ services:
 
   db:
     image: mysql:8.0
+    container_name: db
     env_file:
       - .env
     ports:
@@ -26,6 +28,26 @@ services:
       interval: 10s
       timeout: 5s
       retries: 5
+
+  prometheus:
+    image: prom/prometheus:v3.3.1
+    container_name: prometheus
+    volumes:
+      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+    command:
+      - "--config.file=/etc/prometheus/prometheus.yml"
+    ports:
+      - "9090:9090"
+    depends_on:
+      - web
+
+  grafana:
+    image: grafana/grafana:12.0.0
+    container_name: grafana
+    ports:
+      - "3000:3000"
+    depends_on:
+      - prometheus
 
 volumes:
   db_data:
