@@ -1,5 +1,6 @@
 flask
 mysql-connector-python
+prometheus_client
 
 # Dev tools
 flake8
